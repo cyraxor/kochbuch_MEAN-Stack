@@ -1,0 +1,12 @@
+//  For global styles and variables
+
+$darkblue: #060616;
+$blue: #0e0e26;
+
+html {
+  background: linear-gradient(to right top, $darkblue, $blue);
+}
+
+html, body {
+  height: 100%;
+}
