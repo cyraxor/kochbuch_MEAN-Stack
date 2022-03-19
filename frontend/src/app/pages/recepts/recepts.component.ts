@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ReceptsService } from 'src/app/core/recepts.service';
+import { Recepts } from 'src/app/models/recepts.model';
+import { ActivatedRoute, Router, Params } from '@angular/router';
 
 @Component({
   selector: 'app-recepts',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReceptsComponent implements OnInit {
 
-  constructor() { }
+  recepts?: Recepts[];
 
-  ngOnInit(): void {
+  constructor(private receptsService: ReceptsService) { }
+
+  ngOnInit() {
+    this.receptsService.getLists().subscribe((recepts: any) => {
+      console.log(recepts)
+      this.recepts = recepts;
+    })
   }
-
 }
