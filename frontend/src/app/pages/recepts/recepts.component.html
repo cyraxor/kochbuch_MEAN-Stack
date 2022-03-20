@@ -4,9 +4,35 @@
     <p class="title">Moni's Kochbuch </p>
   </div>
 </div>
-<div class="container centered-content">
-  <div class="card">
-    Test
+<div class="tile is-ancestor">
+
+  <div class="tile is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
+    <div class="tile" *ngFor="let recept of recepts">
+      <div class="card" >
+        <div class="card-image">
+          <figure class="image is-3by3">
+            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-32x32">
+                <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-5 ">{{recept.title}}</p>
+              <p class="subtitle is-6">{{recept.description}}</p>
+            </div>
+          </div>
+
+          <div class="content">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-  <div class="cardox"></div>
+
 

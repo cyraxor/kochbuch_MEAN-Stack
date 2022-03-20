@@ -30,7 +30,7 @@ router.get(`/${receptUrl}`, async (req, res) => {
 // update single recept
 router.patch(`/${receptUrl}/:receptId`, async (req, res) => {
   const updates = Object.keys(req.body)
-  const allowedUpdates = ['title', 'description', 'sourceUrl', 'pictureUrl', 'duration', 'category', 'clicks']
+  const allowedUpdates = ['title', 'description', 'sourceUrl', 'pictureUrl', 'duration', 'category', 'clicks','ingredients','preparation']
   const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
 
   if (!isValidOperation) {

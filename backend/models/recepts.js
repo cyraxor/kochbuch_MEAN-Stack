@@ -1,4 +1,6 @@
 const mongoose = require('mongoose')
+const ingredientsSchema = require('./incredients')
+const preparationsSchema = require('./preparation')
 
 
 const receptSchema = new mongoose.Schema({
@@ -31,10 +33,23 @@ const receptSchema = new mongoose.Schema({
    // counting up when click on recept
    clicks: {
       type: Number
-   }
+   },
+  //  Sub-Schema for ingegredients of recept
+   ingredients: [ingredientsSchema],
+   preparation: [preparationsSchema]
 }, {
    timestamps: true
 })
+
+receptSchema.methods.toJSON = function() {
+  const recepts = this
+  const receptObject = recepts.toObject()
+
+  // delete receptObject.pictureUrl
+
+  return receptObject
+}
+
 
 const Recept = mongoose.model('recept', receptSchema)
 
