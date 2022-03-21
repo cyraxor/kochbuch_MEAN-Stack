@@ -1,0 +1,10 @@
+<app-navbar></app-navbar>
+
+<div class="tile edit-cat-text">
+  <p>edit-categories works!</p>
+</div>
+<div class="field input-width" *ngFor="let category of categories">
+  <div class="control">
+    <input class="input" type="text" placeholder="Text input" value="{{ category.title}}">
+  </div>
+</div>

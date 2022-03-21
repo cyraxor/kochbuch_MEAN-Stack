@@ -6,13 +6,15 @@ import { ReceptsComponent } from './pages/recepts/recepts.component';
 import { NavbarComponent } from './pages/navbar/navbar.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { HttpClientModule } from '@angular/common/http';
+import { EditCategoriesComponent } from './pages/edit-categories/edit-categories.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ReceptsComponent,
     NavbarComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    EditCategoriesComponent
   ],
   imports: [
     BrowserModule,
