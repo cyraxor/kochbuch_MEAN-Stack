@@ -20,4 +20,22 @@ export class EditCategoriesComponent implements OnInit {
     })
   }
 
+  cancelEdit() {
+
+  }
+
+  title: string  = '';
+  isShowDiv = false;
+
+  displayEdit(title: string) {
+    console.log(title);
+    this.isShowDiv = true;
+    this.title = title;
+  }
+
+  hideEdit(editTitle: string) {
+    this.isShowDiv = false;
+    alert(editTitle);
+  }
+
 }

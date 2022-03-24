@@ -1,37 +1,33 @@
 //  For global styles and variables
 
-$darkblue: #060616;
-$blue: #0e0e26;
+$darkblue: #02021f;
+$blue: #0d0d11;
 $lightblue: #3e8ed0;
 $textcolor: #ffffaa;
+$card-background-color: #b7d3f3;
 
 html {
   background: linear-gradient(to right top, $darkblue, $blue);
 }
 
 html, body {
-  height: 100%;
+  height: 98%;
 }
 .spacer {
   margin: 50px;
 }
 
+.centered-content {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+}
 
-$card-background-color: #b7d3f3;
 
-// .centered-content {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   width: 100%;
-//   height: 100%;
 
-//   .card {
-//     display:grid;
-//     justify-content: center;
-
-//   }
-// }
 
 .edit-cat-text {
   position:relative;

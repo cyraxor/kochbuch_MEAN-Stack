@@ -1,10 +1,40 @@
 <app-navbar></app-navbar>
-
-<div class="tile edit-cat-text">
-  <p>edit-categories works!</p>
-</div>
-<div class="field input-width" *ngFor="let category of categories">
-  <div class="control">
-    <input class="input" type="text" placeholder="Text input" value="{{ category.title}}">
+<div class="centered-content">
+  <div class="content-container">
+    <div class="task-manager-container">
+      <div class="task-list-container has-background-light">
+        <div *ngIf="categories">
+          <h1 class="title has-text-primary">Categories</h1>
+          <!-- Task Elements -->
+          <div class="task" *ngFor="let category of categories">
+            <p #title>{{ category.title }}</p>
+            <button class="circle-edit-button is-info showbutton" (click)="displayEdit(title.innerHTML)">
+              <img src="../../../assets/edit-icon.svg" class="has-text-white" >
+            </button>
+          </div>
+          <h3 class="empty-state-text is-4" *ngIf="categories.length === 0">There are no tasks here! Click Add button</h3>
+          <button class="circle-add-button button is-primary" routerLink="./new-task">
+            <img src="../../../assets/plus-icon.svg" class="has-text-white">
+          </button>
+        </div>
+        <div *ngIf="!categories">
+          <h3 class="empty-state-text is-4"> Please select a list from the sidebar</h3>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+<div *ngIf="isShowDiv" class="overlay-container">
+  <div class="edit-box">
+    <div class="modal-box">
+      <h1 class="title">Create new Task</h1>
+      <input type="text" #editTitle [value]="title" placeholder="Change name..." class="input has-background-light is-medium">
+      <br><br>
+      <div class="buttons is-right">
+        <button class="button is-warning is-medium" (click)="hideEdit(editTitle.value)">Cancel</button>
+        <button (click)="cancelEdit()" class="button is-primary has-text-white is-medium ">Create</button>
+      </div>
+    </div>
+  </div>
+</div>
+

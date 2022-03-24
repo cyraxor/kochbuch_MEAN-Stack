@@ -28,6 +28,20 @@
 
 
 $(document).ready(function() {
+  // // $(".overlay-container").hide();
+  // let overlay = $('app-edit-categories');
+  // console.log(overlay);
+
+  // $(overlay).find('.showbutton').click(function(){
+  //   $(overlay).find(".overlay-container").show();
+  //   alert('test');
+  // });
+
+  // $(".cancelbutton").click(function(){
+  //   $(".overlay-container").hide();
+  // });
+
+
 
   // Check for click events on the navbar burger icon
   $(".navbar-burger").click(function() {
@@ -37,6 +51,7 @@ $(document).ready(function() {
       $(".navbar-menu").toggleClass("is-active");
 
   });
+
 
 
   if (window.matchMedia("(max-width: 767px)").matches) {
@@ -63,6 +78,8 @@ $(document).ready(function() {
       });
     }
   }
+
+
 });
 
 
