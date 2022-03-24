@@ -9,18 +9,20 @@
           <div class="task" *ngFor="let category of categories">
             <p #title>{{ category.title }}</p>
             <input #id type="hidden" [value]=category._id>
-            <button class="circle-edit-button is-info showbutton" (click)="displayEdit(title.innerHTML, id.value)">
+            <button class="circle-edit-button showbutton" (click)="displayEdit(title.innerHTML, id.value)">
               <img src="../../../assets/edit-icon.svg" class="has-text-white" >
             </button>
+            <button class="circle-delete-button is-danger showbutton" (click)="displayEdit(title.innerHTML, id.value)">X
+            </button>
           </div>
-          <h3 class="empty-state-text is-4" *ngIf="categories.length === 0">There are no tasks here! Click Add button</h3>
-          <button class="circle-add-button button is-primary" routerLink="./new-task">
+          <h3 class="empty-state-text is-4" *ngIf="categories.length === 0">There are no Categories here! Click Add button</h3>
+          <button class="circle-add-button button is-primary" (click)="displayNew()">
             <img src="../../../assets/plus-icon.svg" class="has-text-white">
           </button>
         </div>
-        <div *ngIf="!categories">
-          <h3 class="empty-state-text is-4"> Please select a list from the sidebar</h3>
-        </div>
+        <!-- <div *ngIf="!categories">
+          <h3 class="empty-state-text is-4"> Please create a new Category with + Icon</h3>
+        </div> -->
       </div>
     </div>
   </div>
@@ -28,13 +30,14 @@
 <div *ngIf="isShowDiv" class="overlay-container">
   <div class="edit-box">
     <div class="modal-box">
-      <h1 class="title">Change Category name</h1>
-      <input type="text" #editTitle [value]="title" placeholder="Change name..." class="input has-background-light is-medium">
+      <h1 class="title" >{{headline}}</h1>
+      <input type="text" #editTitle [value]="title" placeholder="Enter name..." class="input has-background-light is-medium">
       <input #editId type="hidden" [value]=id>
       <br><br>
       <div class="buttons is-right">
         <button class="button is-warning is-medium" (click)="cancelEdit()">Cancel</button>
-        <button (click)="updateCategory(editTitle.value, editId.value)" class="button is-primary has-text-white is-medium ">Save</button>
+        <button *ngIf="!buttonToggler" (click)="updateCategory(editTitle.value, editId.value)" class="button is-primary has-text-white is-medium ">Save</button>
+        <button *ngIf="buttonToggler" (click)="newCategory(editTitle.value)" class="button is-primary has-text-white is-medium ">Create</button>
       </div>
     </div>
   </div>

@@ -29,22 +29,28 @@ export class EditCategoriesComponent implements OnInit {
   title: string  = '';
   id: string = '';
   isShowDiv = false;
+  headline: any;
+  buttonToggler = false;
 
   displayEdit(title: string, _id: string) {
-    console.log(title);
+    this.headline = "Kategorie bearbeiten"
     this.isShowDiv = true;
     this.title = title;
     this.id = _id;
-
+    this.buttonToggler = false;
   }
 
   updateCategory(title: string, _id: string) {
     this.categoryService.updateCategory(title, _id).subscribe(() => {
-      // this.isShowDiv = false;
-      // this.router.navigate(['/edit-categories']);
-      // this.ngOnInit();
       this.reloadPage();
     });
+  }
+
+  displayNew(): void {
+    this.headline = 'Neue Kategorie';
+    this.title = '';
+    this.buttonToggler = true;
+    this.isShowDiv = true;
   }
 
   newCategory(title: string) {
@@ -55,7 +61,7 @@ export class EditCategoriesComponent implements OnInit {
 
   reloadPage(): void {
     this.isShowDiv = false;
-    // this.router.navigate(['/edit-categories']);
+    this.router.navigate(['/edit-categories']);
     this.ngOnInit();
   }
 

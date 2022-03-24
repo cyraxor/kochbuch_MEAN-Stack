@@ -34,18 +34,22 @@
 
 .task {
   position: relative;
-  background: grey;
-  padding: 15px 20px;
+  background: rgb(173, 173, 173);
+  padding: 10px 20px;
   border-radius: 5px;
   margin-top: 10px;
   left: 30px;
   width: 200px;
+  font-size: 1.2em;
 
   &:not(.complete) {
     cursor: pointer;
     transition: box-shadow 0.2s ease, transform 0.2s ease;
 
     .circle-edit-button {
+      visibility: hidden;
+    }
+    .circle-delete-button {
       visibility: hidden;
     }
 
@@ -56,6 +60,9 @@
     &:hover {
       box-shadow: 0 0 0 5px #2ec6e0;
       .circle-edit-button {
+        visibility: visible;
+      }
+      .circle-delete-button {
         visibility: visible;
       }
     }
@@ -84,11 +91,25 @@
 
 .circle-edit-button {
   position: absolute;
-  top: 6px;
-  right: 8px;
+  top: 5px;
+  right: 35px;
   height: 25px;
   width: 25px;
   border-radius: 20%;
+}
+
+.circle-delete-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  height: 25px;
+  width: 25px;
+  border-radius: 20%;
+  &:hover {
+    background-color: rgb(155, 18, 36);
+    color: white;
+  }
+
 }
 
 .empty-state-text {

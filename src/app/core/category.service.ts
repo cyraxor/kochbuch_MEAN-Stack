@@ -9,10 +9,10 @@ export class CategoryService {
   constructor(private webReqService: WebRequestService) { }
 
   updateCategory(title: string,catId: string) {
-    return this.webReqService.patch(`categories/${catId}`, {title});
+    return this.webReqService.patch(`categories/${catId}`, { title });
   }
 
   createCategory(title: string) {
-    return this.webReqService.post('categories', {title})
+    return this.webReqService.post('categories', { title })
   }
 }
