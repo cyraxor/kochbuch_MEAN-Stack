@@ -12,5 +12,4 @@ export class ReceptsService {
   getLists() {
     return this.webReqService.get('recepts');
   }
-
 }

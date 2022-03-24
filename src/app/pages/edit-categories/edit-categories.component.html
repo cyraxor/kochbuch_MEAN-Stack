@@ -8,7 +8,8 @@
           <!-- Task Elements -->
           <div class="task" *ngFor="let category of categories">
             <p #title>{{ category.title }}</p>
-            <button class="circle-edit-button is-info showbutton" (click)="displayEdit(title.innerHTML)">
+            <input #id type="hidden" [value]=category._id>
+            <button class="circle-edit-button is-info showbutton" (click)="displayEdit(title.innerHTML, id.value)">
               <img src="../../../assets/edit-icon.svg" class="has-text-white" >
             </button>
           </div>
@@ -27,12 +28,13 @@
 <div *ngIf="isShowDiv" class="overlay-container">
   <div class="edit-box">
     <div class="modal-box">
-      <h1 class="title">Create new Task</h1>
+      <h1 class="title">Change Category name</h1>
       <input type="text" #editTitle [value]="title" placeholder="Change name..." class="input has-background-light is-medium">
+      <input #editId type="hidden" [value]=id>
       <br><br>
       <div class="buttons is-right">
-        <button class="button is-warning is-medium" (click)="hideEdit(editTitle.value)">Cancel</button>
-        <button (click)="cancelEdit()" class="button is-primary has-text-white is-medium ">Create</button>
+        <button class="button is-warning is-medium" (click)="cancelEdit()">Cancel</button>
+        <button (click)="updateCategory(editTitle.value, editId.value)" class="button is-primary has-text-white is-medium ">Save</button>
       </div>
     </div>
   </div>
