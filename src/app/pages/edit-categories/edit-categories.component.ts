@@ -29,6 +29,7 @@ export class EditCategoriesComponent implements OnInit {
   title: string  = '';
   id: string = '';
   isShowDiv = false;
+  isShowDelete = false;
   headline: any;
   buttonToggler = false;
 
@@ -61,11 +62,23 @@ export class EditCategoriesComponent implements OnInit {
 
   reloadPage(): void {
     this.isShowDiv = false;
+    this.isShowDelete = false;
     this.router.navigate(['/edit-categories']);
     this.ngOnInit();
   }
 
+  showDeleteDialog(title: string, _id: string) {
+    this.isShowDelete = true;
+    this.headline = "Kategorie löschen"
+    this.title = title;
+    this.id = _id;
+  }
 
+  deleteCategory(_id: string) {
+    this.categoryService.deleteCategory(_id).subscribe(() => {
+      this.reloadPage();
+    })
+  }
 
 // unused - delete
   // hideEdit(editTitle: string) {

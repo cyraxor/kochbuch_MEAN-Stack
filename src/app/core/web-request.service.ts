@@ -38,7 +38,9 @@ export class WebRequestService {
     return this.http.patch(`${this.ROOT_URL}/${uri}`, options);
   }
 
-  delete(uri: string, options: Object) {
+  delete(uri: string) {
+    const options = {headers: this.getHeaders() };
+    console.log(uri);
     return this.http.delete(`${this.ROOT_URL}/${uri}`, options);
   }
 }

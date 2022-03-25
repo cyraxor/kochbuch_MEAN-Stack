@@ -12,7 +12,7 @@
             <button class="circle-edit-button showbutton" (click)="displayEdit(title.innerHTML, id.value)">
               <img src="../../../assets/edit-icon.svg" class="has-text-white" >
             </button>
-            <button class="circle-delete-button is-danger showbutton" (click)="displayEdit(title.innerHTML, id.value)">X
+            <button class="circle-delete-button is-danger showbutton" (click)="showDeleteDialog(title.innerHTML, id.value)">X
             </button>
           </div>
           <h3 class="empty-state-text is-4" *ngIf="categories.length === 0">There are no Categories here! Click Add button</h3>
@@ -42,4 +42,17 @@
     </div>
   </div>
 </div>
-
+<div *ngIf="isShowDelete" class="overlay-container">
+  <div class="edit-box">
+    <div class="modal-box">
+      <h1 class="title" >{{headline}}</h1>
+      <h3>Soll die Kategorie <b>{{title}}</b> wirklich gelöscht werden?</h3>
+      <input #editId type="hidden" [value]=id>
+      <br><br>
+      <div class="buttons is-right">
+        <button class="button is-warning is-medium" (click)="cancelEdit()">Cancel</button>
+        <button (click)="deleteCategory(editId.value)" class="button is-danger has-text-white is-medium ">Löschen</button>
+      </div>
+    </div>
+  </div>
+</div>

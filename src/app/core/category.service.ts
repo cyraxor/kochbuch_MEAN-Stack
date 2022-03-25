@@ -15,4 +15,8 @@ export class CategoryService {
   createCategory(title: string) {
     return this.webReqService.post('categories', { title })
   }
+
+  deleteCategory(catId: string) {
+    return this.webReqService.delete(`categories/${catId}`)
+  }
 }
