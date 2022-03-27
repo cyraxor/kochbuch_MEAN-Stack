@@ -11,6 +11,10 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
 export class ReceptsComponent implements OnInit {
 
   recepts?: Recepts[];
+  currentRecept: Object = [];
+  // currentRecept: Object = '';
+  showOverlay= false;
+  test: string = '';
 
   constructor(private receptsService: ReceptsService) { }
 
@@ -20,4 +24,21 @@ export class ReceptsComponent implements OnInit {
       this.recepts = recepts;
     })
   }
+
+  showRecept(id: string) {
+    this.receptsService.getSingleRecept(id).subscribe((recept: any ) => {
+      console.log(recept);
+      this.currentRecept = recept;
+      console.log(this.currentRecept);
+    })
+
+    this.showOverlay = true;
+    this.test = 'noscroll';
+  }
+
+  hideRecept(): void {
+    this.showOverlay = false;
+    this.test = '';
+  }
+
 }

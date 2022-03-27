@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node server/app | ng serve --host 0.0.0.0 --port 3100 --disable-host-check",
-    "dev": "node server/app | ng serve --host 0.0.0.0 --disable-host-check",
+    "dev": "nodemon server/app | ng serve --host 0.0.0.0 --disable-host-check",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"

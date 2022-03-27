@@ -12,4 +12,8 @@ export class ReceptsService {
   getLists() {
     return this.webReqService.get('recepts');
   }
+
+  getSingleRecept(id: string) {
+    return this.webReqService.get(`recepts/${id}`)
+  }
 }

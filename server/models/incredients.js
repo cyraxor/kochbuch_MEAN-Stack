@@ -22,4 +22,5 @@ const ingredientsSchema = new mongoose.Schema({
    }
 })
 
+
 module.exports = ingredientsSchema

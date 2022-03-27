@@ -27,6 +27,20 @@ router.get(`/${receptUrl}`, async (req, res) => {
   }
 })
 
+// read single recept
+router.get(`/${receptUrl}/:receptId`, async (req, res) => {
+  try {
+    const recept = await Recept.findOne({_id: req.params.receptId})
+
+    if (!recept) {
+      return res.status(404).send({error: 'Recept not found!'})
+    }
+    res.send(recept)
+  } catch (error) {
+    res.status(400).send({Error: `${error}`})
+  }
+})
+
 // update single recept
 router.patch(`/${receptUrl}/:receptId`, async (req, res) => {
   const updates = Object.keys(req.body)
