@@ -11,11 +11,12 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
 export class ReceptsComponent implements OnInit {
 
   recepts?: Recepts[];
-  // @ViewChild('currentRecept')
-  currentRecept?: Recepts[];
+  // currentRecept?: Recepts[];
+  currentRecept: any;
+  ingredients: any;
   test: string = '';
   showOverlay= false;
-  id: string = '';
+  // id: string = '';
 
 
   constructor(private receptsService: ReceptsService) { }
@@ -31,17 +32,18 @@ export class ReceptsComponent implements OnInit {
     this.showOverlay = true;
     console.log(receptId);
     this.receptsService.getSingleRecept(receptId).subscribe((recept: any ) => {
-      this.currentRecept = recept.title;
-      // console.log(this.currentRecept);
+      // this.currentRecept = JSON.stringify(recept, undefined)
+      this.currentRecept = recept;
+      this.ingredients = recept.ingredients;
+      console.log(this.currentRecept);
+      console.log(this.ingredients);
     })
-
-
-
-
+    // this.dialogRef.open(ShowReceptComponent)
     this.test = 'noscroll';
   }
 
   hideRecept(): void {
+    // this.dialogRef.closeAll
     this.showOverlay = false;
     this.test = '';
   }
