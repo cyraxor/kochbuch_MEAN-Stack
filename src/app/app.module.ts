@@ -7,6 +7,7 @@ import { NavbarComponent } from './pages/navbar/navbar.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EditCategoriesComponent } from './pages/edit-categories/edit-categories.component';
+import { ShowReceptComponent } from './pages/show-recept/show-recept.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { EditCategoriesComponent } from './pages/edit-categories/edit-categories
     ReceptsComponent,
     NavbarComponent,
     CategoriesComponent,
-    EditCategoriesComponent
+    EditCategoriesComponent,
+    ShowReceptComponent
   ],
   imports: [
     BrowserModule,

@@ -38,7 +38,7 @@
 <div *ngIf="showOverlay" class="overlay-container">
   <a (click)="hideRecept()">
     <div class="overlay-content">
-      <div #currentRecept class="card">
+      <div class="card">
         <div class="card-image">
           <figure class="image is-4by3">
             <img src="../../../assets/leer_preview.jpg" alt="Placeholder image">
@@ -52,7 +52,7 @@
               </figure>
             </div>
             <div class="media-content">
-              <p #currentTitle class="title is-4">{{currentRecept.title}}</p>
+              <p class="title is-4">{{currentRecept}}</p>
               <p class="subtitle is-6">@johnsmith</p>
             </div>
           </div>
@@ -68,6 +68,4 @@
       </div>
     </div>
   </a>
-
 </div>
-

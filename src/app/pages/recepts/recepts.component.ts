@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ReceptsService } from 'src/app/core/recepts.service';
 import { Recepts } from 'src/app/models/recepts.model';
 import { ActivatedRoute, Router, Params } from '@angular/router';
@@ -11,28 +11,33 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
 export class ReceptsComponent implements OnInit {
 
   recepts?: Recepts[];
-  currentRecept: Object = [];
-  // currentRecept: Object = '';
-  showOverlay= false;
+  // @ViewChild('currentRecept')
+  currentRecept?: Recepts[];
   test: string = '';
+  showOverlay= false;
+  id: string = '';
+
 
   constructor(private receptsService: ReceptsService) { }
 
   ngOnInit() {
     this.receptsService.getLists().subscribe((recepts: any) => {
-      console.log(recepts)
+      // console.log(recepts)
       this.recepts = recepts;
     })
   }
 
-  showRecept(id: string) {
-    this.receptsService.getSingleRecept(id).subscribe((recept: any ) => {
-      console.log(recept);
-      this.currentRecept = recept;
-      console.log(this.currentRecept);
+  showRecept(receptId: string) {
+    this.showOverlay = true;
+    console.log(receptId);
+    this.receptsService.getSingleRecept(receptId).subscribe((recept: any ) => {
+      this.currentRecept = recept.title;
+      // console.log(this.currentRecept);
     })
 
-    this.showOverlay = true;
+
+
+
     this.test = 'noscroll';
   }
 
@@ -40,5 +45,4 @@ export class ReceptsComponent implements OnInit {
     this.showOverlay = false;
     this.test = '';
   }
-
 }
