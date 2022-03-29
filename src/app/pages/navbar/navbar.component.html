@@ -25,7 +25,7 @@
           Kategorien
         </a>
         <div class="navbar-dropdown">
-          <div class="nav-border" *ngFor="let category of categories" [routerLink]="['/recepts']" [queryParams]="{category: category._id}" >
+          <div class="nav-border" *ngFor="let category of categories" [routerLink]="['/recepts']" [queryParams]="{category: category.title}" >
             <a class="navbar-item" routerLinkActive="is-active">
               {{ category.title}}
             </a>

@@ -1,0 +1,460 @@
+{
+  "id": 74,
+  "title": "Blumenkohl-Steaks",
+  "duration": 30,
+  "category": 1,
+  "ingredients": {
+      "rows_returned": 12,
+      "data": [
+          {
+              "id": 774,
+              "quantity": "800.00",
+              "unit": "g",
+              "ingredient": "Blumenkohl"
+          },
+          {
+              "id": 775,
+              "quantity": "5.00",
+              "unit": "EL",
+              "ingredient": "Olivenöl"
+          },
+          {
+              "id": 776,
+              "quantity": null,
+              "unit": null,
+              "ingredient": "Paprika-Pulver"
+          },
+          {
+              "id": 777,
+              "quantity": null,
+              "unit": null,
+              "ingredient": "Chiliflocken"
+          },
+          {
+              "id": 778,
+              "quantity": "0.50",
+              "unit": "TL",
+              "ingredient": "getrockneter Thymian"
+          },
+          {
+              "id": 779,
+              "quantity": null,
+              "unit": null,
+              "ingredient": "Salz"
+          },
+          {
+              "id": 780,
+              "quantity": null,
+              "unit": null,
+              "ingredient": "Pfeffer"
+          },
+          {
+              "id": 781,
+              "quantity": "30.00",
+              "unit": "g",
+              "ingredient": "Cashew-Kerne"
+          },
+          {
+              "id": 782,
+              "quantity": "30.00",
+              "unit": "g",
+              "ingredient": "kernige Haferflocken"
+          },
+          {
+              "id": 783,
+              "quantity": "10.00",
+              "unit": "g",
+              "ingredient": "Mohnsamen"
+          },
+          {
+              "id": 784,
+              "quantity": "15.00",
+              "unit": "g",
+              "ingredient": "Sonnenblumenkerne"
+          },
+          {
+              "id": 785,
+              "quantity": null,
+              "unit": null,
+              "ingredient": "zum Garnieren: etwas Petersilie"
+          }
+      ]
+  },
+  "preparation": {
+      "rows_returned": 0,
+      "data": []
+  },
+  "created": "13.04.2021 00:09",
+  "created_before": "vor 11 Monaten",
+  "type": "oven",
+  "source": "https://www.ndr.de/ratgeber/kochen/rezepte/rezeptdb6_id-13946_broadcast-1530_station-ndrtv.html",
+  "image": "Y",
+  "favorite": "N",
+  "tracking": {
+      "rows_returned": 22,
+      "data": [
+          {
+              "id": 87,
+              "userid": 1,
+              "receptid": 74,
+              "visited": "22.09.2021 01:40"
+          },
+          {
+              "id": 86,
+              "userid": 1,
+              "receptid": 74,
+              "visited": "22.09.2021 01:40"
+          },
+          {
+              "id": 85,
+              "userid": 1,
+              "receptid": 74,
+              "visited": "22.09.2021 01:40"
+          },
+          {
+              "id": 84,
+              "userid": 1,
+              "receptid": 74,
+              "visited": "22.09.2021 01:40"
+          },
+          {
+              "id": 83,
+              "userid": 1,
+              "receptid": 74,
+              "visited": "22.09.2021 01:40"
+          },
+          {
+              "id": 82,
+              "userid": 1,
+              "receptid": 74,
+              "visited": "22.09.2021 01:40"
+          },
+          {
+              "id": 81,
+              "userid": 1,
+              "receptid": 74,
+              "visited": "22.09.2021 01:40"
+          },
+          {
+              "id": 80,
+              "userid": 1,
+              "receptid": 74,
+              "visited": "22.09.2021 01:40"
+          },
+          {
+              "id": 79,
+              "userid": 1,
+              "receptid": 74,
+              "visited": "22.09.2021 01:40"
+          },
+          {
+              "id": 78,
+              "userid": 1,
+              "receptid": 74,
+              "visited": "22.09.2021 01:40"
+          },
+          {
+              "id": 77,
+              "userid": 1,
+              "receptid": 74,
+              "visited": "22.09.2021 01:40"
+          },
+          {
+              "id": 76,
+              "userid": 1,
+              "receptid": 74,
+              "visited": "22.09.2021 01:40"
+          },
+          {
+              "id": 75,
+              "userid": 1,
+              "receptid": 74,
+              "visited": "22.09.2021 01:40"
+          },
+          {
+              "id": 74,
+              "userid": 1,
+              "receptid": 74,
+              "visited": "22.09.2021 01:40"
+          },
+          {
+              "id": 73,
+              "userid": 1,
+              "receptid": 74,
+              "visited": "22.09.2021 01:40"
+          },
+          {
+              "id": 72,
+              "userid": 1,
+              "receptid": 74,
+              "visited": "22.09.2021 01:40"
+          },
+          {
+              "id": 71,
+              "userid": 1,
+              "receptid": 74,
+              "visited": "22.09.2021 01:40"
+          },
+          {
+              "id": 70,
+              "userid": 1,
+              "receptid": 74,
+              "visited": "22.09.2021 01:40"
+          },
+          {
+              "id": 69,
+              "userid": 1,
+              "receptid": 74,
+              "visited": "22.09.2021 01:40"
+          },
+          {
+              "id": 68,
+              "userid": 1,
+              "receptid": 74,
+              "visited": "22.09.2021 01:40"
+          },
+          {
+              "id": 67,
+              "userid": 1,
+              "receptid": 74,
+              "visited": "22.09.2021 01:40"
+          },
+          {
+              "id": 61,
+              "userid": 1,
+              "receptid": 74,
+              "visited": "22.09.2021 00:08"
+          }
+      ]
+  }
+},
+{
+  "id": 99,
+  "title": "Himbeer-Schmandkuchen",
+  "duration": 50,
+  "category": 4,
+  "ingredients": {
+      "rows_returned": 12,
+      "data": [
+          {
+              "id": 1022,
+              "quantity": "4.00",
+              "unit": "EL",
+              "ingredient": "Butter"
+          },
+          {
+              "id": 1023,
+              "quantity": "4.00",
+              "unit": "EL",
+              "ingredient": "Mehl"
+          },
+          {
+              "id": 1024,
+              "quantity": "7.00",
+              "unit": "EL",
+              "ingredient": "Zucker"
+          },
+          {
+              "id": 1025,
+              "quantity": "1.00",
+              "unit": "TL",
+              "ingredient": "Backpulver"
+          },
+          {
+              "id": 1026,
+              "quantity": "1.00",
+              "unit": "Prise",
+              "ingredient": "Salz"
+          },
+          {
+              "id": 1027,
+              "quantity": "2.00",
+              "unit": null,
+              "ingredient": "Eier"
+          },
+          {
+              "id": 1028,
+              "quantity": "6.00",
+              "unit": "Becher",
+              "ingredient": "Schmand"
+          },
+          {
+              "id": 1029,
+              "quantity": "6.00",
+              "unit": "Päckchen",
+              "ingredient": "Vanillezucker"
+          },
+          {
+              "id": 1030,
+              "quantity": "6.00",
+              "unit": "Päckchen",
+              "ingredient": "Sahnesteif"
+          },
+          {
+              "id": 1031,
+              "quantity": "400.00",
+              "unit": "g",
+              "ingredient": "Himbeeren, TK"
+          },
+          {
+              "id": 1032,
+              "quantity": "2.00",
+              "unit": "Päckchen",
+              "ingredient": "Tortenguss, rot"
+          },
+          {
+              "id": 1033,
+              "quantity": "6.00",
+              "unit": "EL",
+              "ingredient": "Zucker für den Guss"
+          }
+      ]
+  },
+  "preparation": {
+      "rows_returned": 0,
+      "data": []
+  },
+  "created": "14.06.2021 22:56",
+  "created_before": "vor 9 Monaten",
+  "type": "oven",
+  "source": "https://www.gofeminin.de/kochen-backen/himbeer-schmandkuchen-s4023036.html",
+  "image": "Y",
+  "favorite": "Y",
+  "tracking": {
+      "rows_returned": 22,
+      "data": [
+          {
+              "id": 111,
+              "userid": 1,
+              "receptid": 99,
+              "visited": "05.10.2021 22:58"
+          },
+          {
+              "id": 105,
+              "userid": 1,
+              "receptid": 99,
+              "visited": "01.10.2021 00:59"
+          },
+          {
+              "id": 91,
+              "userid": 1,
+              "receptid": 99,
+              "visited": "23.09.2021 23:38"
+          },
+          {
+              "id": 53,
+              "userid": 1,
+              "receptid": 99,
+              "visited": "22.09.2021 00:01"
+          },
+          {
+              "id": 52,
+              "userid": 1,
+              "receptid": 99,
+              "visited": "22.09.2021 00:00"
+          },
+          {
+              "id": 51,
+              "userid": 1,
+              "receptid": 99,
+              "visited": "21.09.2021 23:59"
+          },
+          {
+              "id": 50,
+              "userid": 1,
+              "receptid": 99,
+              "visited": "21.09.2021 23:58"
+          },
+          {
+              "id": 49,
+              "userid": 1,
+              "receptid": 99,
+              "visited": "21.09.2021 23:57"
+          },
+          {
+              "id": 48,
+              "userid": 1,
+              "receptid": 99,
+              "visited": "21.09.2021 23:56"
+          },
+          {
+              "id": 47,
+              "userid": 1,
+              "receptid": 99,
+              "visited": "21.09.2021 23:56"
+          },
+          {
+              "id": 46,
+              "userid": 1,
+              "receptid": 99,
+              "visited": "21.09.2021 23:53"
+          },
+          {
+              "id": 45,
+              "userid": 1,
+              "receptid": 99,
+              "visited": "21.09.2021 23:52"
+          },
+          {
+              "id": 44,
+              "userid": 1,
+              "receptid": 99,
+              "visited": "21.09.2021 23:52"
+          },
+          {
+              "id": 29,
+              "userid": 1,
+              "receptid": 99,
+              "visited": "21.09.2021 23:41"
+          },
+          {
+              "id": 27,
+              "userid": 1,
+              "receptid": 99,
+              "visited": "21.09.2021 23:40"
+          },
+          {
+              "id": 26,
+              "userid": 1,
+              "receptid": 99,
+              "visited": "21.09.2021 23:39"
+          },
+          {
+              "id": 17,
+              "userid": 1,
+              "receptid": 99,
+              "visited": "21.09.2021 23:27"
+          },
+          {
+              "id": 16,
+              "userid": 1,
+              "receptid": 99,
+              "visited": "21.09.2021 23:27"
+          },
+          {
+              "id": 15,
+              "userid": 1,
+              "receptid": 99,
+              "visited": "21.09.2021 23:25"
+          },
+          {
+              "id": 14,
+              "userid": 1,
+              "receptid": 99,
+              "visited": "21.09.2021 23:24"
+          },
+          {
+              "id": 13,
+              "userid": 1,
+              "receptid": 99,
+              "visited": "21.09.2021 23:24"
+          },
+          {
+              "id": 12,
+              "userid": 1,
+              "receptid": 99,
+              "visited": "21.09.2021 23:22"
+          }
+      ]
+  }
+}

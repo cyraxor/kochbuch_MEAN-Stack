@@ -39,7 +39,7 @@
   <a (click)="hideRecept()">
     <div class="overlay-content" >
       <div class="card">
-        <div class="media-content">
+        <div class="media-content has-text-justified">
           <p class="title is-2">{{currentRecept.title}}</p><br>
         </div>
         <div class="card-image">
@@ -60,14 +60,22 @@
             </div>
           </div>
           <div class="content">
-            {{currentRecept.description}}<br>
-            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+            <div class="columns">
+              <div class="column">
+                {{currentRecept.description}}
+              </div>
+              <div class="column">
+                <p *ngIf="ingredients.length !== 0">{{ingredients.length}} Zutaten:</p>
+                <ul >
+                  <li *ngFor="let item of ingredients">{{item.quantity}} {{item.unit}} {{item.ingredient}}</li>
+                </ul>
+                <p></p>
+              </div>
+            </div>
+
           </div>
           <div class="content">
-            <p *ngIf="ingredients.length !== 0">Zutaten:</p>
-            <ul >
-              <li *ngFor="let item of ingredients">{{item.quantity}} {{item.unit}} {{item.ingredient}}</li>
-            </ul>
+
           </div>
         </div>
       </div>

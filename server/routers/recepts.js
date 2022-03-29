@@ -19,8 +19,19 @@ router.post(`/${receptUrl}`, async(req, res) => {
 })
 //  read all recept
 router.get(`/${receptUrl}`, async (req, res) => {
+  const match = {}
+
+  if (req.query.category) {
+    match.category = req.query.category
+  }
+  if (req.query.title) {
+    match.title = req.query.title
+  }
+
   try {
-    const recept = await Recept.find({})
+    // const recept = await Recept.find({})
+    const recept = await Recept.find(match)
+    .populate()
     res.send(recept)
   } catch (error) {
     res.status(500).send({Error: `${error}`})
