@@ -52,10 +52,25 @@ router.get(`/${receptUrl}/:receptId`, async (req, res) => {
   }
 })
 
+// read all recepts of a single category
+router.get('/categories/:categoryid/recepts', async (req, res) => {
+  try {
+    const recept = await Recept.find({categoryId: req.params.categoryid})
+
+    if (!recept) {
+      return res.status(404).send({Error: 'No Recept on this Category found'})
+    }
+    res.send(recept)
+
+  } catch (error) {
+    res.status(500).send({Error: `${error}`})
+  }
+})
+
 // update single recept
 router.patch(`/${receptUrl}/:receptId`, async (req, res) => {
   const updates = Object.keys(req.body)
-  const allowedUpdates = ['title', 'description', 'sourceUrl', 'pictureUrl', 'duration', 'category', 'clicks','ingredients','preparation']
+  const allowedUpdates = ['title', 'description', 'sourceUrl', 'pictureUrl', 'duration', 'category', 'categoryId', 'clicks', 'ingredients', 'preparation']
   const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
 
   if (!isValidOperation) {

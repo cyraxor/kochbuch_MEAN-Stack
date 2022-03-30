@@ -11,39 +11,40 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
 export class ReceptsComponent implements OnInit {
 
   recepts?: Recepts[];
-  // currentRecept?: Recepts[];
   currentRecept: any;
   ingredients: any;
   test: string = '';
   showOverlay= false;
-  // id: string = '';
 
-
-  constructor(private receptsService: ReceptsService) { }
+  constructor(private receptsService: ReceptsService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    this.receptsService.getLists().subscribe((recepts: any) => {
-      // console.log(recepts)
-      this.recepts = recepts;
-    })
+    this.route.queryParams.subscribe(
+      (params: Params) => {
+        if (params['catId']) {
+          console.log(params)
+          this.receptsService.getCategoryList(params['catId']).subscribe((recepts: any) => {
+            this.recepts = recepts;
+          })
+        } else {
+          this.receptsService.getLists().subscribe((recepts: any) => {
+            this.recepts = recepts;
+          })
+        }
+      }
+    )
   }
 
   showRecept(receptId: string) {
     this.showOverlay = true;
-    console.log(receptId);
     this.receptsService.getSingleRecept(receptId).subscribe((recept: any ) => {
-      // this.currentRecept = JSON.stringify(recept, undefined)
       this.currentRecept = recept;
       this.ingredients = recept.ingredients;
-      console.log(this.currentRecept);
-      console.log(this.ingredients);
     })
-    // this.dialogRef.open(ShowReceptComponent)
     this.test = 'noscroll';
   }
 
   hideRecept(): void {
-    // this.dialogRef.closeAll
     this.showOverlay = false;
     this.test = '';
   }

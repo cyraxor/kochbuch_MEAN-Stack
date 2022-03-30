@@ -34,6 +34,11 @@ const receptSchema = new mongoose.Schema({
   clicks: {
     type: Number
   },
+  categoryId: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref: 'category'
+  },
   //  Sub-Schema for ingegredients of recept
   ingredients: [ingredientsSchema],
   preparation: [preparationsSchema]
