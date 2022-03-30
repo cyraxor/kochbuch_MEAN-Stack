@@ -10,6 +10,10 @@ const receptSchema = new mongoose.Schema({
     required: true,
     trim: true
   },
+  // date of import
+  created: {
+    type: Date
+  },
   // steps of preparation
   description: {
     type: String

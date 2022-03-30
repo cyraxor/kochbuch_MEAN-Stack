@@ -1,4 +1,4 @@
-
+<app-navbar></app-navbar>
 <div class="container" [ngClass]="{noscroll: test}">
   <div class="level-item">
     <div class="columns is-multiline is-mobile is-centered cards-container">
@@ -20,9 +20,7 @@
               </div>
               <div class="media">
                 <div class="media-left">
-                  <figure class="image is-32x32">
-                    <img src="https://bulma.io/images/placeholders/128x128.png" alt="Placeholder image">
-                  </figure>
+                  Dauer: {{recept.duration}} Minuten
                 </div>
                 <div class="media-content">
                   <p class="subtitle is-6">{{recept.description}}</p>
