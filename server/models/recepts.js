@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
-const ingredientsSchema = require('./incredients')
-const preparationsSchema = require('./preparation')
-
+const Ingredients = require('./ingredients')
+const Preparation = require('./preparation')
 
 const receptSchema = new mongoose.Schema({
   // Name of recept
@@ -30,10 +29,6 @@ const receptSchema = new mongoose.Schema({
   duration: {
     type: Number
   },
-  // recept category - eg. cake, bread, cereals
-  category: {
-    type: String
-  },
   // counting up when click on recept
   clicks: {
     type: Number
@@ -41,23 +36,51 @@ const receptSchema = new mongoose.Schema({
   categoryId: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
-    ref: 'category'
+    ref: 'Category'
   },
-  //  Sub-Schema for ingegredients of recept
-  ingredients: [ingredientsSchema],
-  preparation: [preparationsSchema]
+  ingredients: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Ingredient'
+  }],
+  preparation: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Preparation'
+  }]
 }, {
-  timestamps: true
+  timestamps: {
+    createdAt: 'created_on',
+    updatedAt: 'updated_on'
+  }
 })
 
+// receptSchema.virtual('ingredient', {
+//   ref: 'ingredient',
+//   localField: '_id',
+//   foreignField: 'receptId'
+// })
+
+// receptSchema.virtual('preparation', {
+//   ref: 'preparation',
+//   localField: '_id',
+//   foreignField: 'receptId'
+// })
+
 receptSchema.methods.toJSON = function() {
+
   const recepts = this
   const receptObject = recepts.toObject()
 
-  // delete receptObject.ingredients
+  // delete receptObject.sourceUrl
+  // delete receptObject.pictureUrl
+  // delete receptObject.clicks
+  // delete receptObject.duration
+  // delete receptObject.categoryId
+  // delete receptObject.title
+  // delete receptObject.created
+
   return receptObject
 }
 
-const Recept = mongoose.model('recept', receptSchema)
+const Recept = mongoose.model('Recept', receptSchema)
 
 module.exports = Recept

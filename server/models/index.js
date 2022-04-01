@@ -1,9 +1,11 @@
 const Category = require('./categories')
 const Recept = require('./recepts')
-const Ingredients = require('./incredients')
+const Ingredient = require('./ingredients')
+const Preparation = require('./preparation')
 
 module.exports = {
    Category,
    Recept,
-   Ingredients
+   Ingredient,
+   Preparation
 }

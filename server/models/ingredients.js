@@ -1,6 +1,11 @@
 const mongoose = require('mongoose')
+const Recept = require('./recepts')
 
 const ingredientsSchema = new mongoose.Schema({
+  _id: {
+    type: mongoose.Schema.ObjectId,
+    select: false
+  },
   quantity: {
     type: Number,
     required: true,
@@ -16,11 +21,13 @@ const ingredientsSchema = new mongoose.Schema({
     required: true,
     trim: true
   },
-  _id: {
-    type: mongoose.Schema.ObjectId,
-    select: false
-   }
+  receptId: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref: 'Recept'
+  }
 })
 
+const Ingredient = mongoose.model('Ingredient', ingredientsSchema)
 
-module.exports = ingredientsSchema
+module.exports = Ingredient

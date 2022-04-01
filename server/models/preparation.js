@@ -1,3 +1,4 @@
+const { MongoServerClosedError } = require('mongodb')
 const mongoose = require('mongoose')
 
 const preparationsSchema = new mongoose.Schema({
@@ -5,7 +6,7 @@ const preparationsSchema = new mongoose.Schema({
     type: mongoose.Schema.ObjectId,
     select: false
    },
-   description: {
+   step: {
      type: String,
      required: true,
      trim: true
@@ -14,7 +15,15 @@ const preparationsSchema = new mongoose.Schema({
      type: String,
      required: true,
      trim: true
+   },
+   receptId: {
+     type: mongoose.Schema.Types.ObjectId,
+     required: true,
+     ref: 'Recept'
    }
 })
 
-module.exports = preparationsSchema
+
+// module.exports = preparationsSchema
+const Preparation = mongoose.model('Preparation', preparationsSchema)
+module.exports = Preparation
