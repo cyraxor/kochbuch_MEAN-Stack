@@ -1,8 +1,8 @@
 const express = require('express')
 require('./db/mongoose')
 
-const categoryRouter = require('./routers/categories')
-const receptRouter = require('./routers/recepts')
+const { categoryRouter, receptRouter, ingredientRouter, preparationRouter } = require('./routers')
+// const receptRouter = require('./routers/recepts')
 
 // const cors = require('cors')
 
@@ -44,6 +44,8 @@ app.use(function (req, res, next) {
 app.use(express.json())
 app.use(categoryRouter)
 app.use(receptRouter)
+app.use(ingredientRouter)
+app.use(preparationRouter)
 
 app.listen(port, () => {
   console.log('Kochbuch Server is up at port ' + port)

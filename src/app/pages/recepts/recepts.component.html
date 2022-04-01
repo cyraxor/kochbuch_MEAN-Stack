@@ -70,10 +70,12 @@
                 <p></p>
               </div>
             </div>
-
           </div>
           <div class="content">
-
+            <div class="columns">
+              <h3 *ngIf="preparation.length !== 0">Zubereitung</h3>
+              <p *ngFor="let prep of preparation">{{prep.step}}</p>
+            </div>
           </div>
         </div>
       </div>

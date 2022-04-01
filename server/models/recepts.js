@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
-const Ingredients = require('./ingredients')
-const Preparation = require('./preparation')
+// const Ingredients = require('./ingredients')
+// const ingredientsSchema = require('./ingredients')
+// const Preparation = require('./preparation')
 
 const receptSchema = new mongoose.Schema({
   // Name of recept
@@ -37,15 +38,7 @@ const receptSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     required: true,
     ref: 'Category'
-  },
-  ingredients: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Ingredient'
-  }],
-  preparation: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Preparation'
-  }]
+  }
 }, {
   timestamps: {
     createdAt: 'created_on',
@@ -53,8 +46,8 @@ const receptSchema = new mongoose.Schema({
   }
 })
 
-// receptSchema.virtual('ingredient', {
-//   ref: 'ingredient',
+// receptSchema.virtual('Ingredient', {
+//   ref: 'Ingredient',
 //   localField: '_id',
 //   foreignField: 'receptId'
 // })

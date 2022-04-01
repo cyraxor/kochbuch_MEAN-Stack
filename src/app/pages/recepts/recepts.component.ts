@@ -13,6 +13,7 @@ export class ReceptsComponent implements OnInit {
   recepts?: Recepts[];
   currentRecept: any;
   ingredients: any;
+  preparation: any;
   test: string = '';
   showOverlay= false;
 
@@ -39,9 +40,16 @@ export class ReceptsComponent implements OnInit {
     this.showOverlay = true;
     this.receptsService.getSingleRecept(receptId).subscribe((recept: any ) => {
       this.currentRecept = recept;
-      this.ingredients = recept.ingredients;
+      // this.ingredients = recept.ingredients;
     })
-    this.test = 'noscroll';
+    this.receptsService.getIngredientOfRecept(receptId).subscribe((ingredients: any) => {
+      this.ingredients = ingredients;
+    })
+    this.receptsService.getPreparationOfRecept(receptId).subscribe((preparation: any) => {
+      this.preparation = preparation
+    })
+
+    // this.test = 'noscroll';
   }
 
   hideRecept(): void {

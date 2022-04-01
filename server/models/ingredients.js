@@ -21,13 +21,13 @@ const ingredientsSchema = new mongoose.Schema({
     required: true,
     trim: true
   },
-  receptId: {
+  receptID: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
     ref: 'Recept'
   }
 })
 
+// module.exports = ingredientsSchema
 const Ingredient = mongoose.model('Ingredient', ingredientsSchema)
-
 module.exports = Ingredient

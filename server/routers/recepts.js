@@ -1,6 +1,6 @@
 const express = require('express')
 const { default: mongoose } = require('mongoose')
-const { Recept, Ingredient } = require('../models')
+const { Recept, Ingredient, Preparation } = require('../models')
 const router = new express.Router()
 
 const receptUrl = 'recepts'
@@ -42,33 +42,11 @@ router.get(`/${receptUrl}`, async (req, res) => {
 // read single recept
 router.get(`/${receptUrl}/:receptId`, async (req, res) => {
   try {
-    // const recept = await Recept.findOne({_id: req.params.receptId})
-    // .populate('ingredients')
-    // .populate([{path: 'preparation', select: 'step'}])
-    const recept = await Recept.aggregate([
-      {
-        $match: {
-          _id: mongoose.Types.ObjectId(req.params.receptId),
-        },
-      },
-      {
-        $lookup: {
-          from: "Ingredient",
-          localField: "_idd",
-          foreignField: "receptId",
-          as: "ingredients",
-        },
-      },
-      {
-        $project: {
-          __v: 0,
-          "Zutaten.unit": 0,
-          "Zutaten.__v": 0,
-        },
-      }
-    ])
-
-
+    const recept = await Recept.findOne({_id: req.params.receptId})
+    // .populate({
+    //   path: 'Ingredient',
+    //   select: 'unit, quantity'
+    //  })
 
     if (!recept) {
       return res.status(404).send({error: 'Recept not found!'})
