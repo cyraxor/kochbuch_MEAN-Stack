@@ -1,4 +1,6 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+
 import { ReceptsService } from 'src/app/core/recepts.service';
 import { Recepts } from 'src/app/models/recepts.model';
 import { ActivatedRoute, Router, Params } from '@angular/router';
@@ -17,7 +19,7 @@ export class ReceptsComponent implements OnInit {
   test: string = '';
   showOverlay= false;
 
-  constructor(private receptsService: ReceptsService, private route: ActivatedRoute, private router: Router) { }
+  constructor(@Inject(DOCUMENT) private document: Document, private receptsService: ReceptsService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.route.queryParams.subscribe(
@@ -50,10 +52,12 @@ export class ReceptsComponent implements OnInit {
     })
 
     // this.test = 'noscroll';
+    this.document.body.classList.add('noscroll');
   }
 
   hideRecept(): void {
     this.showOverlay = false;
-    this.test = '';
+    // this.test = '';
+    this.document.body.classList.remove('noscroll');
   }
 }

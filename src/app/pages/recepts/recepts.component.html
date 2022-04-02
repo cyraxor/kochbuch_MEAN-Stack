@@ -1,5 +1,92 @@
 <app-navbar></app-navbar>
-<div class="container" [ngClass]="{noscroll: test}">
+
+<div class="container">
+  <div class="grid">
+    <div *ngFor="let recept of recepts">
+      <div class="col-auto">
+        <div class="receptitem card mb-3 border border-start-0 border-top-0  border-end-0 border-3 rounded-3" data-container>
+          <div class="row g-1">
+            <div class="col-md-auto">
+                <div class="card-body">
+                  <h5 class="card-title text-wrap" style="height: 4rem;">
+                      {{recept.title}}
+                  </h5>
+                </div>
+            </div>
+          </div>
+          <div class="row g-2">
+            <div class="col-md-auto">
+                <a (click)="showRecept(receptId.value)" id="img-link" >
+                  <input type="hidden" #receptId value="{{recept._id}}">
+                  <img src="../../../assets/media/{{recept.pictureUrl}}"  class="card-img-top rounded-start" alt="...">
+                </a>
+            </div>
+            <div class="col-md-12">
+                <div class="card-body">
+                  <div class="img-link">
+                      <span style="white-space:nowrap">
+                        <button class="button" method = ""  user_id = "1" recept_id="" >
+                            <i class="favicon fas fa-heart fav-icon fav-off" id=""></i>
+                        </button>
+                        <span *ngIf="recept.duration !== null" style="white-space:nowrap" class="card-text">Dauer: {{recept.duration}} Minuten
+                            <div class="skeleton skeleton-text"></div>
+                        </span>
+                      </span>
+                  </div>
+                  <p class="card-text">
+                      <small class="text-muted">Erstellt: {{recept.created | date: 'dd.MM.yyyy - hh:mm a'}}</small>
+                      <span id="views" class="position-absolute bottom-5 end-0 translate-middle-x badge rounded-pill bg-primary" data-viewed></span>
+                  </p>
+                </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="showOverlay" class="details-grid">
+  <a (click)="hideRecept()">
+    <div id='overlay' class="overlay-content">
+      <div id='titel'>
+        <div class="card" style="width: 100%;">
+          <img src="../../../assets/media/{{currentRecept.pictureUrl}}" class="card-img-top rounded-start" alt="..." style="width: 90%">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-7">
+                <h3 class="card-title">{{currentRecept.title}}</h3>
+                <br />
+              </div>
+            </div>
+            <div class="card-text">
+              <p><b>Zutaten:</b></p>
+                <ul class="list-group-flush">
+                  <li *ngFor="let item of ingredients">{{item.quantity}} {{item.unit}} {{item.ingredient}}</li>
+                </ul>
+            </div>
+            <p>&nbsp;</p>
+            <p *ngIf="preparation.length !== 0" class="card-text"><b>Zubereitung:</b></p>
+            <div >
+              <p class="card-text" id="preparation" *ngFor="let prep of preparation">{{prep.step}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>
+
+
+
+<!--
+  #########################################################
+  #                                                       #
+  #               Original old layout                     #
+  #                                                       #
+  #########################################################
+-->
+
+<!-- <div class="container" [ngClass]="{noscroll: test}">
   <div class="level-item">
     <div class="columns is-multiline is-mobile is-centered cards-container">
       <div class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd" *ngFor="let recept of recepts">
@@ -32,8 +119,8 @@
       </div>
     </div>
   </div>
-</div>
-<div *ngIf="showOverlay" class="overlay-container">
+</div> -->
+<!-- <div *ngIf="showOverlay" class="overlay-container">
   <a (click)="hideRecept()">
     <div class="overlay-content" >
       <div class="card">
@@ -48,12 +135,9 @@
         <div class="card-content">
           <div class="media">
             <div class="media-left">
-              <!-- <figure class="image is-48x48">
-                <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-              </figure> -->
             </div>
             <div class="media-content">
-              <!-- <p class="title is-4">{{currentRecept.title}}</p> -->
+              <p class="title is-4">{{currentRecept.title}}</p>
               <p class="subtitle is-6"><a href="{{currentRecept.sourceUrl}}" target="_blank">Quelle</a></p>
             </div>
           </div>
@@ -81,4 +165,4 @@
       </div>
     </div>
   </a>
-</div>
+</div> -->

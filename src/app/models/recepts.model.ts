@@ -5,6 +5,7 @@ export class Recepts {
   duration: number;
   sourceUrl: string;
   pictureUrl: string;
+  created: Date;
 
   constructor(obj: any) {
     this._id = obj.id;
@@ -13,5 +14,6 @@ export class Recepts {
     this.duration = obj.duration;
     this.sourceUrl = obj.sourceUrl;
     this.pictureUrl = obj.pictureUrl;
+    this.created = obj.created;
   }
 }
