@@ -6,6 +6,7 @@ export class Recepts {
   sourceUrl: string;
   pictureUrl: string;
   created: Date;
+  clicks: number;
 
   constructor(obj: any) {
     this._id = obj.id;
@@ -15,5 +16,6 @@ export class Recepts {
     this.sourceUrl = obj.sourceUrl;
     this.pictureUrl = obj.pictureUrl;
     this.created = obj.created;
+    this.clicks = obj.clicks;
   }
 }

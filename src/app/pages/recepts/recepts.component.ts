@@ -38,16 +38,39 @@ export class ReceptsComponent implements OnInit {
     )
   }
 
-  showRecept(receptId: string) {
+  // showRecept(receptId: string) {
+  //   this.showOverlay = true;
+  //   this.receptsService.getSingleRecept(receptId).subscribe((recept: any ) => {
+  //     this.currentRecept = recept;
+  //     // this.ingredients = recept.ingredients;
+  //   })
+  //   this.receptsService.getIngredientOfRecept(receptId).subscribe((ingredients: any) => {
+  //     this.ingredients = ingredients;
+  //   })
+  //   this.receptsService.getPreparationOfRecept(receptId).subscribe((preparation: any) => {
+  //     this.preparation = preparation
+  //   })
+
+  //   this.receptsService.increasClickCount(receptId: Recepts)
+
+  //   // this.test = 'noscroll';
+  //   this.document.body.classList.add('noscroll');
+  // }
+
+  showRecept(recept: Recepts) {
+    this.receptsService.increasClickCount(recept).subscribe(() => {
+      // clicks = recept.clicks
+    })
+
     this.showOverlay = true;
-    this.receptsService.getSingleRecept(receptId).subscribe((recept: any ) => {
+    this.receptsService.getSingleRecept(recept).subscribe(() => {
       this.currentRecept = recept;
       // this.ingredients = recept.ingredients;
     })
-    this.receptsService.getIngredientOfRecept(receptId).subscribe((ingredients: any) => {
+    this.receptsService.getIngredientOfRecept(recept).subscribe((ingredients: any) => {
       this.ingredients = ingredients;
     })
-    this.receptsService.getPreparationOfRecept(receptId).subscribe((preparation: any) => {
+    this.receptsService.getPreparationOfRecept(recept).subscribe((preparation: any) => {
       this.preparation = preparation
     })
 
@@ -55,9 +78,14 @@ export class ReceptsComponent implements OnInit {
     this.document.body.classList.add('noscroll');
   }
 
+
   hideRecept(): void {
     this.showOverlay = false;
     // this.test = '';
     this.document.body.classList.remove('noscroll');
+  }
+
+  clickFav(): void {
+    alert('Test');
   }
 }

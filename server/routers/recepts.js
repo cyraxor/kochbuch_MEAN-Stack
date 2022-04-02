@@ -96,6 +96,31 @@ router.patch(`/${receptUrl}/:receptId`, async (req, res) => {
   }
 })
 
+// // Click counter
+// router.patch(`/${receptUrl}/:receptId/clicked`, async (req, res) => {
+//   const updates = Object.keys(req.body)
+//   const allowedUpdates = ['clicks']
+//   const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
+
+//   if (!isValidOperation) {
+//     return res.status(400).send({ error: 'Invalid updates!'})
+//   }
+//   try {
+//     const recept = await Recept.findOne({_id: req.params.receptId})
+
+//     if (!recept) {
+//       return res.status(404).send({error: 'No recept with this id for updating'})
+//     }
+//     updates.forEach((update) => recept[update] = req.body[update])
+
+//     await recept.save()
+//     res.status(201).send(recept)
+//   } catch (error) {
+//     res.status(400).send({Error: `${error}`})
+//   }
+// })
+
+
 // delete a singe recept
 router.delete(`/${receptUrl}/:receptId`, async (req, res) => {
   try {

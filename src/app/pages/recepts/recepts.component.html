@@ -16,7 +16,8 @@
           </div>
           <div class="row g-2">
             <div class="col-md-auto">
-                <a (click)="showRecept(receptId.value)" id="img-link" >
+                <!-- <a (click)="showRecept(receptId.value)" id="img-link" > -->
+                <a (click)="showRecept(recept)" id="img-link" >
                   <input type="hidden" #receptId value="{{recept._id}}">
                   <img src="../../../assets/media/{{recept.pictureUrl}}"  class="card-img-top rounded-start" alt="...">
                 </a>
@@ -25,9 +26,9 @@
                 <div class="card-body">
                   <div class="img-link">
                       <span style="white-space:nowrap">
-                        <button class="button" method = ""  user_id = "1" recept_id="" >
+                        <span (click)="clickFav()" class="fav-button" method = ""  user_id = "1" recept_id="" >
                             <i class="favicon fas fa-heart fav-icon fav-off" id=""></i>
-                        </button>
+                        </span>
                         <span *ngIf="recept.duration !== null" style="white-space:nowrap" class="card-text">Dauer: {{recept.duration}} Minuten
                             <div class="skeleton skeleton-text"></div>
                         </span>
@@ -35,7 +36,7 @@
                   </div>
                   <p class="card-text">
                       <small class="text-muted">Erstellt: {{recept.created | date: 'dd.MM.yyyy - hh:mm a'}}</small>
-                      <span id="views" class="position-absolute bottom-5 end-0 translate-middle-x badge rounded-pill bg-primary" data-viewed></span>
+                      <span id="views" class="position-absolute bottom-5 end-0 translate-middle-x badge rounded-pill bg-primary" data-viewed>{{recept.clicks}}</span>
                   </p>
                 </div>
             </div>
@@ -54,7 +55,7 @@
           <div class="card-body">
             <div class="row">
               <div class="col-sm-7">
-                <h3 class="card-title">{{currentRecept.title}}</h3>
+                <h1 class="card-title">{{currentRecept.title}}</h1>
                 <br />
               </div>
             </div>
@@ -67,10 +68,14 @@
             <p>&nbsp;</p>
             <p *ngIf="preparation.length !== 0" class="card-text"><b>Zubereitung:</b></p>
             <div >
-              <p class="card-text" id="preparation" *ngFor="let prep of preparation">{{prep.step}}</p>
+              <!-- <p class="card-text" id="preparation" *ngFor="let prep of preparation">{{prep.step}}</p> -->
+              <div class="card-text" id="preparation" *ngFor="let prep of preparation">{{prep.step}}</div>
             </div>
           </div>
         </div>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
       </div>
     </div>
   </a>

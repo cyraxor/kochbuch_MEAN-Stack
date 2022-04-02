@@ -18,15 +18,22 @@ export class ReceptsService {
     return this.webReqService.get(`categories/${catId}/recepts`)
   }
 
-  getIngredientOfRecept(receptId: string) {
-    return this.webReqService.get(`recepts/${receptId}/ingredients`)
+  getIngredientOfRecept(recept: Recepts) {
+    return this.webReqService.get(`recepts/${recept._id}/ingredients`)
   }
 
-  getPreparationOfRecept(receptId: String) {
-    return this.webReqService.get(`recepts/${receptId}/preparations`)
+  getPreparationOfRecept(recept: Recepts) {
+    return this.webReqService.get(`recepts/${recept._id}/preparations`)
   }
 
-  public getSingleRecept(id: string) {
-    return this.webReqService.get(`recepts/${id}`)
+  getSingleRecept(recept: Recepts) {
+    return this.webReqService.get(`recepts/${recept._id}`)
+  }
+
+  increasClickCount(recept: Recepts) {
+    return this.webReqService.patch(`recepts/${recept._id}`, {
+      clicks: recept.clicks + 1,
+    });
+
   }
 }

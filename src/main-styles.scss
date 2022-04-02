@@ -10,11 +10,11 @@ html {
   background: linear-gradient(to right top, $darkblue, $blue);
 }
 
-html, body {
-  height: 98%;
-}
+// html, body {
+//   height: 100%;
+// }
 .spacer {
-  margin: 50px;
+  margin-top: 40px;
 }
 
 .centered-content {
@@ -28,7 +28,12 @@ html, body {
 }
 
 
-
+.card {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  padding: 26px;
+  border-radius: 10px;
+}
 
 .edit-cat-text {
   position:relative;
